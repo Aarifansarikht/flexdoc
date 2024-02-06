@@ -1,6 +1,5 @@
 "use client";
-import Image from "next/image";
-import styles from "./page.module.css";
+
 import ThreeScene from "./components/ThreeScene";
 import Overlay from "./components/Overlay";
 import { useState } from "react";

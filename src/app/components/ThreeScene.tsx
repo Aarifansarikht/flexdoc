@@ -8,7 +8,7 @@ import {
 
 import { Porsche } from "./Porsche";
 
-export default function App({ changelight }: any) {
+export default function ThreeScene({ changelight }: any) {
   return (
     <Canvas
       gl={{ logarithmicDepthBuffer: true, antialias: false }}
