@@ -9,19 +9,22 @@ import {
 
 import { Porsche } from "./Porsche";
 
-export default function App() {
+export default function App({ changelight }: any) {
   return (
     <Canvas
       gl={{ logarithmicDepthBuffer: true, antialias: false }}
       dpr={[1, 1.5]}
-      camera={{ position: [0, 0, 15], fov: 20 }}
+      camera={{
+        position: [12, window.innerWidth / window.innerHeight, 10],
+        fov: 25,
+      }}
       //   style={{ zIndex: 2 }}
     >
       <color attach="background" args={["#222222"]} />
       <Porsche rotation={[0, Math.PI / 1.5, 0]} scale={0.015} />
       <hemisphereLight intensity={0.5} />
       <ContactShadows
-        resolution={1024}
+        resolution={512}
         frames={1}
         position={[0, -1.16, 0]}
         scale={15}
@@ -51,34 +54,34 @@ export default function App() {
       <Environment resolution={1080}>
         {/* Ceiling */}
         <Lightformer
-          intensity={2}
+          intensity={changelight ? 10 : 2}
           rotation-x={Math.PI / 2}
           position={[0, 4, -9]}
           scale={[10, 1, 1]}
         />
         <Lightformer
-          intensity={2}
+          intensity={changelight ? 10 : 2}
           rotation-x={Math.PI / 2}
           position={[0, 4, -6]}
           scale={[10, 1, 1]}
         />
         <Lightformer
-          intensity={2}
+          intensity={changelight ? 10 : 2}
           rotation-x={Math.PI / 2}
           position={[0, 4, -3]}
           scale={[10, 1, 1]}
         />
         <Lightformer
-          intensity={2}
+          intensity={changelight ? 10 : 2}
           rotation-x={Math.PI / 2}
           position={[0, 4, 0]}
           scale={[10, 1, 1]}
         />
         <Lightformer
-          intensity={2}
+          intensity={changelight ? 10 : 2}
           rotation-x={Math.PI / 2}
           position={[0, 4, 3]}
-          scale={[10, 1, 1]}
+          scale={[changelight ? 10 : 12, 1, 1]}
         />
         <Lightformer
           intensity={2}
@@ -117,10 +120,10 @@ export default function App() {
       </Environment>
 
       <OrbitControls
-      // enablePan={false}
-      // enableZoom={false}
-      // minPolarAngle={Math.PI / 2.2}
-      // maxPolarAngle={Math.PI / 2.2}
+        // enablePan={false}
+        // enableZoom={false}
+        minPolarAngle={Math.PI / 2.2}
+        maxPolarAngle={Math.PI / 2.2}
       />
     </Canvas>
   );

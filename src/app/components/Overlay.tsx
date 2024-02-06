@@ -1,6 +1,6 @@
 import React from "react";
 
-function Overlay({ props }: any) {
+function Overlay({ togglelight }: any) {
   return (
     <>
       <a
@@ -24,7 +24,19 @@ function Overlay({ props }: any) {
           fontSize: "13px",
         }}
       >
-        06/02/2024
+        <button
+          onClick={togglelight}
+          style={{
+            padding: "16px 40px",
+            fontSize: "16px",
+            fontWeight: 700,
+            backgroundColor: "gold",
+            color: "#000",
+            letterSpacing: "1.2px",
+          }}
+        >
+          Light
+        </button>
       </div>
 
       {/* <Logo style={{ position: "absolute", top: 40, left: 40, width: 30 }} /> */}
