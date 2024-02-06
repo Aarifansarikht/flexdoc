@@ -14,7 +14,7 @@ export default function Home() {
     <main
       style={{
         height: "100vh",
-        backgroundImage: `url(./back.jpeg)`,
+        backgroundImage: `url(./back.jpg)`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}

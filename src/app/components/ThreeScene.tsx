@@ -16,10 +16,10 @@ export default function ThreeScene({ changelight }: any) {
       gl={{ logarithmicDepthBuffer: true, antialias: false }}
       dpr={[1, 1.5]}
       camera={{
-        position: [12, 1, 10],
+        position: [2, 1, 10],
         fov: 25,
       }}
-      //   style={{ zIndex: 2 }}
+      style={{ paddingTop: "10rem" }}
     >
       {/* <color attach="background" args={["#222222"]} /> */}
       <Porsche rotation={[0, Math.PI / 1.5, 0]} scale={0.015} />
@@ -52,7 +52,7 @@ export default function ThreeScene({ changelight }: any) {
       {/* We're building a cube-mapped environment declaratively.
           Anything you put in here will be filmed (once) by a cubemap-camera
           and applied to the scenes environment, and optionally background. */}
-      <Environment resolution={1080}>
+      <Environment resolution={512}>
         {/* Ceiling */}
         <Lightformer
           intensity={changelight ? 10 : 2}
