@@ -11,30 +11,12 @@ import { Porsche } from "./Porsche";
 import { useEffect, useState } from "react";
 
 export default function ThreeScene({ changelight }: any) {
-  const [windowSize, setWindowSize] = useState({
-    width: typeof window !== "undefined" ? window.innerWidth : 0,
-    height: typeof window !== "undefined" ? window.innerHeight : 0,
-  });
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   return (
     <Canvas
       gl={{ logarithmicDepthBuffer: true, antialias: false }}
       dpr={[1, 1.5]}
       camera={{
-        position: [12, window.innerWidth / window.innerHeight, 10],
+        position: [12, 1, 10],
         fov: 25,
       }}
       //   style={{ zIndex: 2 }}
@@ -141,7 +123,7 @@ export default function ThreeScene({ changelight }: any) {
       <OrbitControls
         // enablePan={false}
         // enableZoom={false}
-        minPolarAngle={Math.PI / 2.5}
+        minPolarAngle={Math.PI / 5}
         maxPolarAngle={Math.PI / 2}
       />
     </Canvas>
