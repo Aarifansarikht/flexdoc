@@ -11,7 +11,14 @@ export default function Home() {
     setChangeLight(!changelight);
   };
   return (
-    <main style={{ height: "100vh", backgroundImage: `url(./back.jpeg)` }}>
+    <main
+      style={{
+        height: "100vh",
+        backgroundImage: `url(./back.jpeg)`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <ThreeScene changelight={changelight} />
       <Overlay togglelight={togglelight} />
     </main>
