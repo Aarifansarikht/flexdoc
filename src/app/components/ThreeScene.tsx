@@ -16,13 +16,13 @@ export default function ThreeScene({ changelight }: any) {
       gl={{ logarithmicDepthBuffer: true, antialias: false }}
       dpr={[1, 1.5]}
       camera={{
-        position: [2, 1, 10],
+        position: [2, 1, 6],
         fov: 25,
       }}
-      style={{ paddingTop: "10rem" }}
+      style={{ paddingTop: "20rem" }}
     >
       {/* <color attach="background" args={["#222222"]} /> */}
-      <Porsche rotation={[0, Math.PI / 1.5, 0]} scale={0.015} />
+      <Porsche rotation={[0, Math.PI / 1.5, 0]} scale={0.5} />
       <hemisphereLight intensity={0.5} />
       <ContactShadows
         resolution={512}
