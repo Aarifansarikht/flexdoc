@@ -1,3 +1,4 @@
+"use client";
 import { Canvas } from "@react-three/fiber";
 import {
   Environment,
@@ -7,8 +8,27 @@ import {
 } from "@react-three/drei";
 
 import { Porsche } from "./Porsche";
+import { useEffect, useState } from "react";
 
 export default function ThreeScene({ changelight }: any) {
+  const [windowSize, setWindowSize] = useState({
+    width: typeof window !== "undefined" ? window.innerWidth : 0,
+    height: typeof window !== "undefined" ? window.innerHeight : 0,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <Canvas
       gl={{ logarithmicDepthBuffer: true, antialias: false }}
