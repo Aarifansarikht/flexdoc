@@ -123,7 +123,7 @@ export default function ThreeScene({ changelight }: any) {
       <OrbitControls
         // enablePan={false}
         // enableZoom={false}
-        minPolarAngle={Math.PI / 5}
+        minPolarAngle={Math.PI / 2.5}
         maxPolarAngle={Math.PI / 2}
       />
     </Canvas>
