@@ -20,7 +20,7 @@ export default function App({ changelight }: any) {
       }}
       //   style={{ zIndex: 2 }}
     >
-      <color attach="background" args={["#222222"]} />
+      {/* <color attach="background" args={["#222222"]} /> */}
       <Porsche rotation={[0, Math.PI / 1.5, 0]} scale={0.015} />
       <hemisphereLight intensity={0.5} />
       <ContactShadows
@@ -122,8 +122,8 @@ export default function App({ changelight }: any) {
       <OrbitControls
         // enablePan={false}
         // enableZoom={false}
-        minPolarAngle={Math.PI / 2.2}
-        maxPolarAngle={Math.PI / 2.2}
+        minPolarAngle={Math.PI / 2.5}
+        maxPolarAngle={Math.PI / 2}
       />
     </Canvas>
   );
