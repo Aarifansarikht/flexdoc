@@ -19,7 +19,7 @@ export default function ThreeScene({ changelight }: any) {
         position: [2, 1, 6],
         fov: 25,
       }}
-      style={{ paddingTop: "20rem" }}
+      style={{ paddingTop: "20rem", height: "100vh" }}
     >
       {/* <color attach="background" args={["#222222"]} /> */}
       <Porsche rotation={[0, Math.PI / 1.5, 0]} scale={0.5} />

@@ -7,7 +7,7 @@ function Overlay({ togglelight }: any) {
         href="https://pmnd.rs/"
         style={{
           position: "absolute",
-          bottom: 40,
+          top: 40,
           left: 40,
           fontSize: "13px",
         }}
@@ -19,7 +19,7 @@ function Overlay({ togglelight }: any) {
       <div
         style={{
           position: "absolute",
-          bottom: 40,
+          top: 40,
           right: 40,
           fontSize: "13px",
         }}
