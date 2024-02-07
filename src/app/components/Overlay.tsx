@@ -25,7 +25,7 @@ function Overlay({
           APPINLAY
         </a>
 
-        <div style={{ marginRight: "60px", display: "flex", gap: "4px" }}>
+        <div style={{ paddingRight: "60px", display: "flex", gap: "4px" }}>
           <button
             onClick={togglelight}
             style={{
