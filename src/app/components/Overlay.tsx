@@ -1,6 +1,11 @@
 import React from "react";
 
-function Overlay({ togglelight, changeColor }: any) {
+function Overlay({
+  togglelight,
+  changeColor,
+  palette,
+  selectedColorIndex,
+}: any) {
   return (
     <>
       <div
@@ -20,7 +25,7 @@ function Overlay({ togglelight, changeColor }: any) {
           APPINLAY
         </a>
 
-        <div style={{ marginLeft: "10px", display: "flex", gap: "4px" }}>
+        <div style={{ marginRight: "60px", display: "flex", gap: "4px" }}>
           <button
             onClick={togglelight}
             style={{
@@ -36,7 +41,7 @@ function Overlay({ togglelight, changeColor }: any) {
             Light
           </button>
 
-          <button
+          {/* <button
             onClick={changeColor}
             style={{
               padding: "8px",
@@ -45,7 +50,15 @@ function Overlay({ togglelight, changeColor }: any) {
             }}
           >
             Change Color
-          </button>
+          </button> */}
+          <select value={selectedColorIndex} onChange={changeColor}>
+            <option value="">Select Color</option>
+            {palette.map((option: any) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 

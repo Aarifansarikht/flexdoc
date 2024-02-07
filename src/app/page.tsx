@@ -46,7 +46,12 @@ export default function Home() {
         palette={palette}
         selectedColorIndex={selectedColorIndex}
       />
-      <Overlay togglelight={togglelight} changeColor={changeColor} />
+      <Overlay
+        togglelight={togglelight}
+        palette={palette}
+        selectedColorIndex={selectedColorIndex}
+        changeColor={changeColor}
+      />
     </main>
   );
 }
