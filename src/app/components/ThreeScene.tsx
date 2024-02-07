@@ -10,7 +10,12 @@ import {
 import { Porsche } from "./Porsche";
 import { useEffect, useState } from "react";
 
-export default function ThreeScene({ changelight }: any) {
+export default function ThreeScene({
+  changelight,
+  changeColor,
+  palette,
+  selectedColorIndex,
+}: any) {
   return (
     <Canvas
       gl={{ logarithmicDepthBuffer: true, antialias: false }}
@@ -22,7 +27,13 @@ export default function ThreeScene({ changelight }: any) {
       style={{ paddingTop: "20rem", height: "100vh" }}
     >
       {/* <color attach="background" args={["#222222"]} /> */}
-      <Porsche rotation={[0, Math.PI / 1.5, 0]} scale={0.5} />
+      <Porsche
+        rotation={[0, Math.PI / 1.5, 0]}
+        scale={0.5}
+        changeColor={changeColor}
+        selectedColorIndex={selectedColorIndex}
+        palette={palette}
+      />
       <hemisphereLight intensity={0.5} />
       <ContactShadows
         resolution={512}
@@ -33,25 +44,7 @@ export default function ThreeScene({ changelight }: any) {
         opacity={1}
         far={0}
       />
-      {/* <mesh
-        scale={4}
-        position={[3, -1.161, -1.5]}
-        rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
-      >
-        <ringGeometry args={[0.9, 1, 4, 1]} />
-        <meshStandardMaterial color="white" roughness={0.75} />
-      </mesh>
-      <mesh
-        scale={4}
-        position={[-3, -1.161, -1]}
-        rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
-      >
-        <ringGeometry args={[0.9, 1, 3, 1]} />
-        <meshStandardMaterial color="white" roughness={0.75} />
-      </mesh> */}
-      {/* We're building a cube-mapped environment declaratively.
-          Anything you put in here will be filmed (once) by a cubemap-camera
-          and applied to the scenes environment, and optionally background. */}
+
       <Environment resolution={512}>
         {/* Ceiling */}
         <Lightformer

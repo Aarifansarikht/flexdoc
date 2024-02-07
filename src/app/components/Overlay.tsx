@@ -1,42 +1,52 @@
 import React from "react";
 
-function Overlay({ togglelight }: any) {
+function Overlay({ togglelight, changeColor }: any) {
   return (
     <>
-      <a
-        href="https://pmnd.rs/"
+      <div
         style={{
           position: "absolute",
           top: 40,
           left: 40,
           fontSize: "13px",
+          display: "flex",
+          justifyContent: "space-between",
+          width: "100%",
         }}
       >
-        RS.45656200
-        <br />
-        APPINLAY
-      </a>
-      <div
-        style={{
-          position: "absolute",
-          top: 40,
-          right: 40,
-          fontSize: "13px",
-        }}
-      >
-        <button
-          onClick={togglelight}
-          style={{
-            padding: "16px 40px",
-            fontSize: "16px",
-            fontWeight: 700,
-            backgroundColor: "gold",
-            color: "#000",
-            letterSpacing: "1.2px",
-          }}
-        >
-          Light
-        </button>
+        <a href="https://appinlay.com/">
+          RS.45656200
+          <br />
+          APPINLAY
+        </a>
+
+        <div style={{ marginLeft: "10px", display: "flex", gap: "4px" }}>
+          <button
+            onClick={togglelight}
+            style={{
+              // padding: "10px 40px",
+              // fontSize: "16px",
+              padding: "8px",
+              backgroundColor: "gold",
+              color: "#000",
+              letterSpacing: "1.2px",
+              border: "none",
+            }}
+          >
+            Light
+          </button>
+
+          <button
+            onClick={changeColor}
+            style={{
+              padding: "8px",
+
+              // padding: "10px 40px",
+            }}
+          >
+            Change Color
+          </button>
+        </div>
       </div>
 
       {/* <Logo style={{ position: "absolute", top: 40, left: 40, width: 30 }} /> */}
